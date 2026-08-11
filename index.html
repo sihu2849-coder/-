@@ -3,42 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모듈화 웹 계산기</title>
-    <!-- CSS 스타일시트 연결 -->
+    <title>공학용 웹 계산기</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="calculator">
+    <!-- 입력 및 결과 표시창 -->
     <input type="text" id="display" readonly value="0">
+    
     <div class="buttons">
+        <!-- 1행: 공학용 함수 및 지우기 -->
+        <button class="sci" onclick="scientific('sin')">sin</button>
+        <button class="sci" onclick="scientific('cos')">cos</button>
+        <button class="sci" onclick="scientific('tan')">tan</button>
         <button class="clear" onclick="clearDisplay()">C</button>
+
+        <!-- 2행 -->
+        <button class="sci" onclick="scientific('sqrt')">√</button>
+        <button class="sci" onclick="scientific('pow2')">x²</button>
+        <button class="sci" onclick="scientific('log')">log</button>
         <button class="operator" onclick="appendOperator('/')">÷</button>
+
+        <!-- 3행 -->
+        <button class="sci" onclick="scientific('ln')">ln</button>
+        <button class="sci" onclick="appendNumber('3.1415926535')">π</button>
+        <button class="sci" onclick="scientific('abs')">abs</button>
         <button class="operator" onclick="appendOperator('*')">×</button>
-        <button class="operator" onclick="appendOperator('-')">-</button>
-        
+
+        <!-- 4행 (숫자 패드 시작) -->
         <button onclick="appendNumber('7')">7</button>
         <button onclick="appendNumber('8')">8</button>
         <button onclick="appendNumber('9')">9</button>
-        <button class="operator" onclick="appendOperator('+')">+</button>
-        
+        <button class="operator" onclick="appendOperator('-')">-</button>
+
+        <!-- 5행 -->
         <button onclick="appendNumber('4')">4</button>
         <button onclick="appendNumber('5')">5</button>
         <button onclick="appendNumber('6')">6</button>
-        <!-- = 버튼: 2행을 차지하도록 설정 -->
-        <button class="equal" id="btn-equal" onclick="calculate()">=</button>
-        
+        <button class="operator" onclick="appendOperator('+')">+</button>
+
+        <!-- 6행 -->
         <button onclick="appendNumber('1')">1</button>
         <button onclick="appendNumber('2')">2</button>
         <button onclick="appendNumber('3')">3</button>
-        
-        <!-- 0 버튼: 2열을 차지하도록 설정 -->
+        <!-- = 버튼: 우측 하단 고정 -->
+        <button class="equal" id="btn-equal" onclick="calculate()">=</button>
+
+        <!-- 7행 -->
         <button id="btn-zero" onclick="appendNumber('0')">0</button>
         <button onclick="appendNumber('.')">.</button>
     </div>
 </div>
 
-<!-- JavaScript 로직 연결 -->
 <script src="script.js"></script>
 </body>
 </html>
