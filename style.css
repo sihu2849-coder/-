@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.calculator {
+    background-color: #202124;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 320px;
+}
+
+#display {
+    width: 100%;
+    height: 80px;
+    background-color: #202124;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    padding: 20px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #3c4043;
+    color: #ffffff;
+    transition: background-color 0.1s;
+    aspect-ratio: 1;
+}
+
+button:active {
+    background-color: #5f6368;
+}
+
+button.operator {
+    background-color: #fbbc04;
+    color: #202124;
+}
+
+button.operator:active {
+    background-color: #e3a803;
+}
+
+button.clear {
+    background-color: #dadce0;
+    color: #202124;
+}
+
+button.clear:active {
+    background-color: #bdc1c6;
+}
+
+button.equal {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+button.equal:active {
+    background-color: #1557b0;
+}
+
+/* 특수 버튼 레이아웃 스타일 처리 */
+#btn-equal {
+    grid-row: span 2;
+    height: 100%;
+    border-radius: 25px;
+}
+
+#btn-zero {
+    grid-column: span 2;
+    border-radius: 25px;
+    aspect-ratio: auto;
+}
