@@ -15,19 +15,19 @@ body {
 
 .calculator {
     background-color: #202124;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    width: 320px;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    width: 360px; /* 공학용 버튼 수용을 위해 폭 확대 */
 }
 
 #display {
     width: 100%;
-    height: 80px;
+    height: 90px;
     background-color: #202124;
     border: none;
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     text-align: right;
     padding: 10px;
     margin-bottom: 20px;
@@ -36,13 +36,13 @@ body {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr); /* 4열 유지, 행을 늘려 배치 */
+    gap: 10px;
 }
 
 button {
-    padding: 20px;
-    font-size: 1.25rem;
+    padding: 15px 0;
+    font-size: 1.15rem;
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -54,6 +54,17 @@ button {
 
 button:active {
     background-color: #5f6368;
+}
+
+/* 공학용 기능 버튼 스타일 */
+button.sci {
+    background-color: #5f6368;
+    color: #ffffff;
+    border-radius: 20px; /* 약간 각진 조약돌 모양 */
+}
+
+button.sci:active {
+    background-color: #80868b;
 }
 
 button.operator {
@@ -83,15 +94,16 @@ button.equal:active {
     background-color: #1557b0;
 }
 
-/* 특수 버튼 레이아웃 스타일 처리 */
+/* 레이아웃 병합 스타일 */
 #btn-equal {
     grid-row: span 2;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 24px;
+    aspect-ratio: auto;
 }
 
 #btn-zero {
     grid-column: span 2;
-    border-radius: 25px;
+    border-radius: 24px;
     aspect-ratio: auto;
 }
